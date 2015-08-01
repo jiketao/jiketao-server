@@ -28,4 +28,16 @@ ShoppingItem.add({
 	}
 });
 
+ShoppingItem.schema.methods = {
+	update: function(data) {
+		console.log('called object method');
+	}
+}
+
+ShoppingItem.schema.statics = {
+	create: function(data) {
+		console.log('called static method');
+	}
+}
+
 ShoppingItem.register();
