@@ -29,7 +29,8 @@ keystone.pre('render', middleware.flashMessages);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
-	actions: importRoutes('./actions')
+	actions: importRoutes('./actions'),
+	admin: importRoutes('./admin')
 };
 
 // Setup Route Bindings
@@ -44,5 +45,7 @@ exports = module.exports = function(app) {
 	app.get('/shop/item/add', routes.actions.addShoppingItem);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+
+	app.get('/admin', routes.admin.dashbord);
 	
 };
