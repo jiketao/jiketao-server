@@ -18,7 +18,9 @@ jiketao backend
 
 
 # 开发文档
-1. ![数据库 shema 设计](/doc/database_schema_design.md)
+1. [数据库 shema 设计](/doc/database_schema_design.md)!
+2. [startbootstrap-sb-admin-2 文档](http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html)! 
+3. [keystonejs 文档](http://keystonejs.com)!
 
 
 
