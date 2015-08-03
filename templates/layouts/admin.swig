@@ -70,14 +70,14 @@
                             </div>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 仪表盘</a>
+                            <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> 仪表盘</a>
                         </li>
 
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">商品列表</a>
+                                    <a href="/admin/item-list">商品列表</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">添加商品</a>
@@ -146,6 +146,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
-
+    <script src="/bower_components/vue/dist/vue.js"></script>
+    {%- block footer %} {% endblock %}
 </body>
 </html>

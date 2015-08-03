@@ -10,6 +10,5 @@ exports = module.exports = function(req, res) {
 	locals.section = 'dashbord';
 	
 	// Render the view
-	view.render('admin/dashboard');
-	
+	view.render('admin/dashboard');	
 };

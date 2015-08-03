@@ -47,5 +47,6 @@ exports = module.exports = function(app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	app.get('/admin', routes.admin.dashbord);
-	
+	app.get('/admin/item-list', routes.admin.itemList);
+
 };
