@@ -33,50 +33,7 @@
 		{%- block head %}{% endblock %}
 	</head>
 	<body>
-
-		{# HEADER #}
-		<div id="header" class="container">
-
-			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
-			   ... or completely change this header to suit your design. #}
-			<div role="navigation" class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">jiketao</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{%- for link in navLinks -%}
-								{%- set linkClass = '' -%}
-								{%- if link.key == section -%}
-									{%- set linkClass = ' class="active"' -%}
-								{%- endif %}
-								<li{{ linkClass | safe }}>
-									<a href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-							{%- endfor %}
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							{% if user -%}
-								{%- if user.canAccessKeystone -%}
-									<li><a href="/keystone">Open Keystone</a></li>
-								{%- endif -%}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-							{%- else -%}
-								<li><a href="/keystone/signin">Sign In</a></li>
-							{%- endif %}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		<br><br><br>
 		{# BODY #}
 		<div id="body">
 			{# NOTE:
@@ -97,7 +54,7 @@
 		{# FOOTER #}
 		<div id="footer" class="container">
 			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
-			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+			<p>极客淘 team：特🐶，6174，livoras</p>
 		</div>
 
 		{# JAVASCRIPT #}
