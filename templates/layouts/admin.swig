@@ -80,7 +80,7 @@
                                     <a href="/admin/item-list">商品列表</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">添加商品</a>
+                                    <a href="/admin/add-item">添加商品</a>
                                 </li>
                             </ul>
                         </li>

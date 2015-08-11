@@ -48,5 +48,7 @@ exports = module.exports = function(app) {
 
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/item-list', routes.admin.itemList);
+	app.get('/admin/add-item', routes.admin.addItem);
+	app.post('/admin/add-item', routes.actions.addShoppingItem);
 
 };

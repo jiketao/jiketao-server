@@ -10,41 +10,33 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 	
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	locals.section = 'addshoppingItems';
-	
 	console.log(req.params, req.body.data);
 
 	var Model = keystone.list('ShoppingItem').model;
-	var item = new Model({
-		title: 'helo',
-		details: {
-			price: '123.89',
-			ext: 'asdfasd'
-		},
-		content: {
-			brief: 'mbp',
-			extended: 'so what'
-		}
-	});
+	var item = new Model(req.body);
 	
 	// for test
-	Model.create();
-	item.update();
+	// Model.create();
+	// item.update();
 
 	item.save(function(err, result) {
 
 		if (result) {
-			res.json(result);	
+			res.json({
+				success: true,
+				data: result
+			});	
 			return console.log('success', result);
 		}
 
 		if (err) {
+			res.json({
+				success: false,
+				err: err
+			})
 			return console.log('error', result);
 		}
 
 	});
-
-	// Render the view
+	
 };
