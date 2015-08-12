@@ -79,26 +79,32 @@
 		methods: {
 			submit: function() {
 				var $d = this.$data;
+				$d.details.priceRange = $d.details.priceRange || {};
 				$.ajax({
 					type: 'post',
 					url: '/admin/update-item',
 					data: {
-						uid: $d.uid,
-						title: $d.title,
-						details: {
-							price: $d.details.price,
-							priceRange: {
-								max: $d.details.priceRange.max,
-								min: $d.details.priceRange.min
-							},
-							picUrl: $d.details.picUrl
+						query: {
+							_id: $d._id,
 						},
-						content: {
-							brief: $d.content.brief,
-							extended: $d.content.extended
+						data: {
+							title: $d.title,
+							details: {
+								price: $d.details.price,
+								priceRange: {
+									max: $d.details.priceRange.max,
+									min: $d.details.priceRange.min
+								},
+								picUrl: $d.details.picUrl
+							},
+							content: {
+								brief: $d.content.brief,
+								extended: $d.content.extended
+							}
 						}
 					},
 					success: function(data) {
+						alert('success');
 						console.log('sucess', data);
 					}
 				});		
