@@ -8,7 +8,8 @@ var Types = keystone.Field.Types;
 
 var ShoppingItem = new keystone.List('ShoppingItem', {
 	map: { name: 'title'},
-	autokey: { path: 'slug', from: 'title'}
+	autokey: { path: 'slug', from: 'title'},
+	autokey: { path: 'uid', from: '_id'}
 });
 
 ShoppingItem.add({

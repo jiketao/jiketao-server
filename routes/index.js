@@ -42,13 +42,13 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.get('/shop/item', routes.views.shoppingItem);
-	app.get('/shop/item/add', routes.actions.addShoppingItem);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/item-list', routes.admin.itemList);
 	app.get('/admin/add-item', routes.admin.addItem);
+	app.get('/admin/update-item/:id', routes.admin.updateItem);
 	app.post('/admin/add-item', routes.actions.addShoppingItem);
-
+	app.post('/admin/update-item', routes.actions.updateShoppingItem);
 };

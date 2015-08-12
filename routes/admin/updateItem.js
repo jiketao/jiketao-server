@@ -10,25 +10,23 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	locals.nav = 'itemList';
+	locals.nav = 'addItem';
 	locals.data = {
-		items: [],
+		item: {},
 		page: 0
 	}
 
+	var id = req.params.id;
+
 	view.on('init', function(next) {
 
-		var query = keystone.list('ShoppingItem').model.find();
+		var query = keystone.list('ShoppingItem').model.findOne({_id: id});
 
 		query.exec(function(err, results) {
-
-			locals.data.items = results;
-			locals.data.items.forEach(function(it) {
-				it.uid = it._id;
-			});
+			locals.data.item = results;
 			next(err);
 		});
 	});
 
-	view.render('admin/itemList');
+	view.render('admin/updateItem');
 }
