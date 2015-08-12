@@ -47,8 +47,15 @@ exports = module.exports = function(app) {
 
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/item-list', routes.admin.itemList);
-	app.get('/admin/add-item', routes.admin.addItem);
-	app.get('/admin/update-item/:id', routes.admin.updateItem);
-	app.post('/admin/add-item', routes.actions.addShoppingItem);
+
+	app.get( '/admin/update-item/:id', routes.admin.updateItem);
 	app.post('/admin/update-item', routes.actions.updateShoppingItem);
+
+	app.get( '/admin/add-item', routes.admin.addItem);
+	app.post('/admin/add-item', routes.actions.addShoppingItem);
+
+	app.get( '/admin/add-post', routes.admin.addPost);
+	app.post('/admin/add-post', routes.actions.addPost);
+	app.get( '/admin/posts', routes.admin.posts);
+
 };

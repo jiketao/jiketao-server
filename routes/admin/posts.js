@@ -1,5 +1,5 @@
 /**
- * 商品列表
+ * 文章列表
  */
 
 var keystone = require('keystone');
@@ -10,24 +10,25 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	locals.nav = 'addItem';
+	locals.nav = 'itemList';
 	locals.data = {
-		item: {},
+		items: [],
 		page: 0
 	}
 
-	var id = req.params.id;
-
-	// 商品分类编辑
 	view.on('init', function(next) {
 
-		var query = keystone.list('ShoppingItem').model.findOne({_id: id});
+		var query = keystone.list('Post').model.find();
 
 		query.exec(function(err, results) {
-			locals.data.item = results;
+
+			locals.data.items = results;
+			locals.data.items.forEach(function(it) {
+				it.uid = it._id;
+			});
 			next(err);
 		});
 	});
-	
-	view.render('admin/updateItem');
+
+	view.render('admin/posts');
 }

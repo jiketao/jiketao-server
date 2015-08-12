@@ -27,6 +27,7 @@ exports = module.exports = function(req, res) {
 		}
 
 
+		// 需要替换为深度拷贝的
 		_.extendOwn(result, body.data);
 		_.extendOwn(result.content, body.data.content);
 		_.extendOwn(result.details, body.data.details);
@@ -50,6 +51,6 @@ exports = module.exports = function(req, res) {
 			}
 
 		});
-		
+
 	});
 };

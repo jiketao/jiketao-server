@@ -89,10 +89,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 文章管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">文章列表</a>
+                                    <a href="/admin/posts">文章列表</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">新增文章</a>
+                                    <a href="/admin/add-post">新增文章</a>
                                 </li>
                             </ul>
                         </li>
