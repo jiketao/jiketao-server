@@ -6,7 +6,7 @@ API文档
 > —Bjarne Stroustrup
 
 * * *
-所有的API都采用RESTful风格API。
+所有的API都采用RESTful风格API。所有list里面的item都返回一个_id。
 
 
 * 获取投放数据列表
