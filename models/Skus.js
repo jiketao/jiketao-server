@@ -15,10 +15,10 @@ var Skus = new keystone.List('Skus');
 Skus.add({
 	// 投放唯一id名称
 	name: { type: Types.Name, required: true, index: true},
-	// 投放数据
-	data: {
-		date: {type: Types.Date}
-	}
+});
+
+Skus.schema.add({
+	data: {}
 });
 
 
