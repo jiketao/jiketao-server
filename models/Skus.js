@@ -10,9 +10,9 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var Recommend = new keystone.List('Recommend');
+var Skus = new keystone.List('Skus');
 
-Recommend.add({
+Skus.add({
 	// 投放唯一id名称
 	name: { type: Types.Name, required: true, index: true},
 	// 投放数据
@@ -22,13 +22,13 @@ Recommend.add({
 });
 
 
-Recommend.schema.statics = {
+Skus.schema.statics = {
 	create: function(data) {
 		console.log('called static method');
 	},
 	getList: function(data) {
-		console.log('get recommend data list');
+		console.log('get Skus data list');
 	}
 }
 
-Recommend.register();
+Skus.register();
