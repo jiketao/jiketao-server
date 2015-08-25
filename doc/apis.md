@@ -2,7 +2,7 @@ API文档
 ====================
 
 > “Design and programming are human activities; forget that and all is lost.”
-> 
+>
 > —Bjarne Stroustrup
 
 * * *
@@ -12,7 +12,7 @@ API文档
 * 获取投放数据列表
 
 ```
-* method: GET 
+* method: GET
 * url: /skus
 * request: 无
 * response: [
@@ -20,7 +20,7 @@ API文档
     {name: <String>, data: <Object>},
     ...
   ]
-    
+
 ```
 * 获取特定投放数据
 
@@ -42,9 +42,9 @@ API文档
 * url: /posts/categories
 * request: 无
 * response: [
-    {name: <String>}, 
-    {name: <String>}, 
-    {name: <String>}, 
+    {name: <String>},
+    {name: <String>},
+    {name: <String>},
     ...
   ]
 
@@ -59,9 +59,9 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
 * url: /products/categories
 * request: 无
 * response: [
-    {name: <String>}, 
-    {name: <String>}, 
-    {name: <String>}, 
+    {name: <String>, _id: <String>},
+    {name: <String>, _id: <String>},
+    {name: <String>, _id: <String>}
     ...
   ]
 
@@ -76,6 +76,7 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
 * method: GET
 * url: /posts
 * request: {
+    categoryId: <String>, // 分类的id
     pageNum: <Integer>, //分页页码
     pageCount: <Integer>, //每页数目
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
@@ -113,6 +114,7 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
 * method: GET
 * url: /products
 * request: {
+    categoryId: <String>, // 分类的id
     pageNum: <Integer>, //分页页码
     pageCount: <Integer>, //每页数目
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
@@ -176,7 +178,7 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
 * response: [
     同`获取商品列表`返回结果
   ]
-  
+
 ```
 
 * 获取文章详情
@@ -215,7 +217,7 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
 ```
 
 * 获取商品详情
- 
+
 ```
 * method: GET
 * url: /products/:id
