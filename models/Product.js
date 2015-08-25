@@ -34,9 +34,6 @@ Product.add({
 
 		// 赞
 		upvote: {type: Number},
-
-		// 扩展字段 json stringify 格式
-		ext: {type: String}
 	},
 
 	// 商品描述信息
@@ -54,6 +51,18 @@ Product.add({
 		many: true
 	}
 });
+
+/**
+ * 通过schema来添加array
+ */
+Product.schema.add({
+	details: {
+		skus: [{
+			key: String,
+			value: String
+		}]
+	}
+})
 
 Product.schema.methods = {
 	update: function(data) {
