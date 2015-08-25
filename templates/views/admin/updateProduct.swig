@@ -82,7 +82,7 @@
 				$d.details.priceRange = $d.details.priceRange || {};
 				$.ajax({
 					type: 'post',
-					url: '/admin/update-item',
+					url: '/admin/product/edit',
 					data: {
 						query: {
 							_id: $d._id,

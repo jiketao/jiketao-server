@@ -48,11 +48,11 @@ exports = module.exports = function(app) {
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/products', routes.admin.products);
 
-	// app.get( '/admin/product/:id', routes.admin.updateProduct);
-	// app.post('/admin/product/edit', routes.actions.updateProduct);
+	app.get( '/admin/product/new', routes.admin.addProduct);
+	app.post('/admin/product/new', routes.actions.addProduct);
+	app.post('/admin/product/edit', routes.actions.updateProduct);
+	app.get( '/admin/product/:id', routes.admin.updateProduct);
 
-	// app.get( '/admin/product/new', routes.admin.addProduct);
-	// app.post('/admin/product/new', routes.actions.addProduct);
 
 	// app.get( '/admin/add-post', routes.admin.addPost);
 	// app.post('/admin/add-post', routes.actions.addPost);

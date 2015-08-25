@@ -30,7 +30,7 @@
 			  	 		<td>{{details.price}}</td>
 			  	 		<td>{{content.brief}}</td>
 			  	 		<td></td>
-			  	 		<td> <a href="/admin/update-item/{{uid}}" class="btn btn-sm btn-primary">编辑</a></td>
+			  	 		<td> <a href="/admin/product/{{uid}}" class="btn btn-sm btn-primary">编辑</a></td>
 			  	 	</tr>
 			  	 </tbody>
 			  </table>

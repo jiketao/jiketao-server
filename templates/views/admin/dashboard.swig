@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <a href="/admin/item-list">
+            <a href="/admin/products">
                 <div class="panel-footer">
                     <span class="pull-left">查看详情</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

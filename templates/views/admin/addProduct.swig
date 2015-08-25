@@ -91,7 +91,7 @@
 				var $d = this.$data;
 				$.ajax({
 					type: 'post',
-					url: '/admin/add-item',
+					url: '/admin/product/new',
 					data: {
 						title: $d.title,
 						details: {

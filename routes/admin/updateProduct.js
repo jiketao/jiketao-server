@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
 	// 商品分类编辑
 	view.on('init', function(next) {
 
-		var query = keystone.list('ShoppingItem').model.findOne({_id: id});
+		var query = keystone.list('Product').model.findOne({_id: id});
 
 		query.exec(function(err, results) {
 			locals.data.item = results;
@@ -29,5 +29,5 @@ exports = module.exports = function(req, res) {
 		});
 	});
 	
-	view.render('admin/updateItem');
+	view.render('admin/updateProduct');
 }

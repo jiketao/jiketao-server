@@ -77,10 +77,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/admin/item-list">商品列表</a>
+                                    <a href="/admin/products">商品列表</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/add-item">添加商品</a>
+                                    <a href="/admin/product/new">添加商品</a>
                                 </li>
                             </ul>
                         </li>
