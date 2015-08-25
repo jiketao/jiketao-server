@@ -46,16 +46,16 @@ exports = module.exports = function(app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	app.get('/admin', routes.admin.dashbord);
-	app.get('/admin/item-list', routes.admin.itemList);
+	app.get('/admin/products', routes.admin.products);
 
-	app.get( '/admin/update-item/:id', routes.admin.updateItem);
-	app.post('/admin/update-item', routes.actions.updateShoppingItem);
+	// app.get( '/admin/product/:id', routes.admin.updateProduct);
+	// app.post('/admin/product/edit', routes.actions.updateProduct);
 
-	app.get( '/admin/add-item', routes.admin.addItem);
-	app.post('/admin/add-item', routes.actions.addShoppingItem);
+	// app.get( '/admin/product/new', routes.admin.addProduct);
+	// app.post('/admin/product/new', routes.actions.addProduct);
 
-	app.get( '/admin/add-post', routes.admin.addPost);
-	app.post('/admin/add-post', routes.actions.addPost);
-	app.get( '/admin/posts', routes.admin.posts);
+	// app.get( '/admin/add-post', routes.admin.addPost);
+	// app.post('/admin/add-post', routes.actions.addPost);
+	// app.get( '/admin/posts', routes.admin.posts);
 
 };

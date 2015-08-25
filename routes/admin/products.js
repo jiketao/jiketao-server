@@ -10,15 +10,24 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	locals.nav = 'addItem';
 	locals.data = {
 		items: [],
 		page: 0
 	}
 
 	view.on('init', function(next) {
-		next();
+
+		var query = keystone.list('Product').model.find();
+
+		query.exec(function(err, results) {
+
+			locals.data.items = results;
+			locals.data.items.forEach(function(it) {
+				it.uid = it._id;
+			});
+			next(err);
+		});
 	});
 
-	view.render('admin/addItem');
+	view.render('admin/products');
 }

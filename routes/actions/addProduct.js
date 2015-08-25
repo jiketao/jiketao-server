@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
 	
 	console.log(req.params, req.body.data);
 
-	var Model = keystone.list('ShoppingItem').model;
+	var Model = keystone.list('Product').model;
 	var item = new Model(req.body);
 	
 	// for test

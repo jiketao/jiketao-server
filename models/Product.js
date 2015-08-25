@@ -1,18 +1,18 @@
 /**
- * ShoppingItem Model
+ * Product Model
  * ==================
  * @author  6174
  */
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var ShoppingItem = new keystone.List('ShoppingItem', {
+var Product = new keystone.List('Product', {
 	map: { name: 'title'},
 	autokey: { path: 'slug', from: 'title'},
 	autokey: { path: 'uid', from: '_id'}
 });
 
-ShoppingItem.add({
+Product.add({
 
 	// 商品标题
 	title: {type: String, require: true},
@@ -50,21 +50,21 @@ ShoppingItem.add({
 	// 商品分类信息
 	categories: {
 		type: Types.Relationship, 
-		ref: 'ShoppingItemCategory', 
+		ref: 'ProductCategory', 
 		many: true
 	}
 });
 
-ShoppingItem.schema.methods = {
+Product.schema.methods = {
 	update: function(data) {
 		console.log('called object method');
 	}
 }
 
-ShoppingItem.schema.statics = {
+Product.schema.statics = {
 	create: function(data) {
 		console.log('called static method');
 	}
 }
 
-ShoppingItem.register();
+Product.register();

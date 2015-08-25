@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
 	var locals = res.locals;
 	
 	var body = req.body;
-	var query = keystone.list('ShoppingItem').model.findOne({
+	var query = keystone.list('Product').model.findOne({
 		_id: body.query._id
 	});
 
