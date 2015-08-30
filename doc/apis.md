@@ -6,7 +6,8 @@ API文档
 > —Bjarne Stroustrup
 
 * * *
-所有的API都采用RESTful风格API。所有list里面的item都返回一个_id。
+
+1. 所有的API都采用RESTful风格API。所有list里面的item都返回一个_id。
 
 
 * 获取投放数据列表
@@ -82,30 +83,31 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
     [sortDirection]: 1/-1 //可选，排序方向。默认为1。1为正序，-1为逆序
   }
-* response: [
-    {
-      upvote: <Integer>, // 点赞数目
-      title: <String>,
-      state: <String> // draft（草稿）| published（发布）,
-      author: {
-        name: <String>,
-        email: <String>
+* response: {
+    list: [
+      {
+        upvote: <Integer>, // 点赞数目
+        title: <String>,
+        state: <String> // draft（草稿）| published（发布）,
+        author: {
+          name: <String>,
+          email: <String>
+        },
+        publishedDate: <String>,
+        cover: <String> //  e.g. /images/1.png
+        content: {
+          brief: <String>,
+          extended: <String>
+        },
+        categories: [
+          {name: <String>},
+          {name: <String>}
+          ...
+        ]
       },
-      publishedDate: <String>,
-      cover: <String> //  e.g. /images/1.png
-      content: {
-        brief: <String>,
-        extended: <String>
-      },
-      categories: [
-        {name: <String>},
-        {name: <String>}
-        ...
-      ]
-    },
-    ...
-  ]
-
+      ...
+    ],
+    totalCount: <Integer> // 符合查询条件的所有文章的数目，用来做分页
 ```
 
 * 获取商品列表
@@ -120,31 +122,34 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
     [sortDirection]: 1/-1 //可选，排序方向。默认为1。1为正序，-1为逆序
   }
-* response: [
-    {
-      title: <String>,
-      details: {
-        price: <Number>,
-        priceRange: {
-          max: <Number>,
-          min: <Number>
+* response: {
+    list: [
+      {
+        title: <String>,
+        details: {
+          price: <Number>,
+          priceRange: {
+            max: <Number>,
+            min: <Number>
+          },
+          pictures: [<String>, <String>, <String>], //商品图片
+          upvote: <Integer>,
+          ext: <Object> // 扩展规格说明数据，key-value
         },
-        pictures: [<String>, <String>, <String>], //商品图片
-        upvote: <Integer>,
-        ext: <Object> // 扩展规格说明数据，key-value
+        content: {
+          brief: <String>,
+          extended: <String>
+        },
+        categories: [
+          {name: <String>},
+          {name: <String>}
+          ...
+        ]
       },
-      content: {
-        brief: <String>,
-        extended: <String>
-      },
-      categories: [
-        {name: <String>},
-        {name: <String>}
-        ...
-      ]
-    },
-    ...
- ]
+      ...
+   ],
+   totalCount: <Integer>
+ }
 ```
 
 * 搜索文章
@@ -158,9 +163,9 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
     [sortDirection]: 1/-1 //可选，排序方向。默认为1。1为正序，-1为逆序
   }
-* response: [
+* response: {
     同`获取文章列表`返回结果
-  ]
+  }
 ```
 
 
@@ -175,9 +180,9 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
     [sortType]: <String>, //可选，根据什么数据排序。默认为"publishedDate"，按发布时间排序
     [sortDirection]: 1/-1 //可选，排序方向。默认为1。1为正序，-1为逆序
   }
-* response: [
+* response: {
     同`获取商品列表`返回结果
-  ]
+  }
 
 ```
 
