@@ -57,5 +57,5 @@ exports = module.exports = function(app) {
 	// app.get( '/admin/posts', routes.admin.posts);
 
 	// apis
-	app.get('/skus', routes.actions.skus);
+	app.get('/skus', routes.actions.getSkus);
 };

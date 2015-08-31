@@ -27,7 +27,7 @@ exports = module.exports = function(req, res) {
 	var locals = res.locals;
 	
 	var Model = keystone.list('Skus').model;
-	
+
 	console.log(req.params, req.query); 
 
 	Model.find({
@@ -39,10 +39,12 @@ exports = module.exports = function(req, res) {
 	}, function(err, docs){
 
 		if (result) {
+
 			res.json({
 				success: true,
 				data: result
 			});	
+			
 			return console.log('success', result);
 		}
 

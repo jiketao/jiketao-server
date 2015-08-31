@@ -26,18 +26,6 @@ API文档
   ]
 
 ```
-* 获取特定投放数据
-
-```
-* method: GET
-* url: /skus/:name
-* request: 无
-* response: {
-    name: <String>,
-    data: <Object> // 同上
-  }
-
-```
 
 * 获取所有文章分类
 
