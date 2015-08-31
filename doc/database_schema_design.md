@@ -6,5 +6,5 @@
 - User 
 - Post
 - PostCategory
-- ShoppingItem
-- ShoopingItemCategory
+- Product
+- ProductCategory
