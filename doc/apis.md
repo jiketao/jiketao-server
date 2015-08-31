@@ -14,7 +14,11 @@ API文档
 ```
 * method: GET
 * url: /skus
-* request: 无
+*
+* request: {
+*    skus: [name<String>]
+* }
+* 
 * response: [
     {name: <String>, data: <Object>}, // 这里的Object的结构为key-value，可以任意在后台进行设置
     {name: <String>, data: <Object>},

@@ -52,10 +52,10 @@ exports = module.exports = function(app) {
 	app.post('/admin/product/new', routes.actions.addProduct);
 	app.post('/admin/product/edit', routes.actions.updateProduct);
 	app.get( '/admin/product/:id', routes.admin.updateProduct);
-
-
 	// app.get( '/admin/add-post', routes.admin.addPost);
 	// app.post('/admin/add-post', routes.actions.addPost);
 	// app.get( '/admin/posts', routes.admin.posts);
 
+	// apis
+	app.get('/skus', routes.actions.skus);
 };
