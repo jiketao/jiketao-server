@@ -16,7 +16,7 @@ var ProductCategory = new keystone.List('ProductCategory', {
 ProductCategory.add({
 	
 	// 分类名称
-	name: { type: String, required: true },
+	name: { type: String, required: true , unique: true },
 
 	// 父级分类
 	// parent: { type:}

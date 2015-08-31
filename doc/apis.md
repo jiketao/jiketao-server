@@ -16,7 +16,7 @@ API文档
 * url: /skus
 *
 * request: {
-*    skus: [name<String>]
+*    names: [name<String>]
 * }
 * 
 * response: [
