@@ -32,7 +32,8 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': 'ic8-8eIQ+2K&#6]6L+zJ&W|p@w.V038L+&4&)|6lVy%}VC)WXIzGZr6s!]*[OVuP'
+	'cookie secret': 'ic8-8eIQ+2K&#6]6L+zJ&W|p@w.V038L+&4&)|6lVy%}VC)WXIzGZr6s!]*[OVuP',
+	'mongo': 'mongodb://127.0.0.1'
 
 });
 
