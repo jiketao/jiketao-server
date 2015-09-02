@@ -5,6 +5,7 @@
 		<div class="jumbotron">
 			<img src="/images/logo.svg" width="160">
 			<h1>极客淘</h1>
+			<p>Comming soon!</p>
 			{% if user and user.canAccessKeystone %}
 				<p>
 					<a href="/admin" class="btn btn-lg btn-primary">Open the Admin UI</a>
