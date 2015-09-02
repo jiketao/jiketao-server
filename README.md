@@ -25,6 +25,10 @@ jiketao backend
 3. [keystonejs 文档](http://keystonejs.com)!
 4. [api](/doc/apis.md)
 
+# 发布 
+
+git remote add deploy ssh://user@ip/${bare-git-path}
+git push deploy master
 
 
 
