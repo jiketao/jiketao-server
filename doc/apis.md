@@ -200,8 +200,8 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
       extended: <String>
     },
     categories: [
-      {name: <String>},
-      {name: <String>}
+      {name: <String>, _id: <String>},
+      {name: <String>, _id: <String>}
       ...
     ],
     products: [ // 注意这里需要返回这篇文章相关的商品数据
@@ -239,8 +239,8 @@ NOTE: 这个每个页面渲染的时候会通过全局变量的方式注入页�
       extended: <String>
     },
     categories: [
-      {name: <String>},
-      {name: <String>}
+      {name: <String>, _id: <String>},
+      {name: <String>, _id: <String>}
       ...
     ],
     posts: [ // 注意这里需要返回此件商品相关的文章数据
