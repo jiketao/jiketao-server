@@ -14,7 +14,8 @@
     "img{{index}}.png"
     {{/repeat}}
   ],
-  "product": [
+  "Product": [
+    {{#repeat 10}}
     {
       "title": "{{title}}",
       "details": {
@@ -23,13 +24,51 @@
           "max": "{{commerce:price}}",
           "min": "{{commerce:price}}"
         },
-        "picUrl": "{{image:business}}",
-        "upvote": {{number 10 1000}}
+        "picUrl": "{{image:technics}}",
+        "upvote": {{number 10 1000}},
+        "skus": [
+          {{#repeat 1 5}}
+          {
+            "key": "{{name:firstName}}",
+            "value": "{{name:lastName}}"
+          }
+          {{/repeat}}
+        ]
       },
       "content": {
         "brief": "{{lorem:sentence}}",
-        "article": "{{lorem:paragraphs 1}}"
+        "extended": "{{lorem:paragraphs 1}}"
       }
     }
+    {{/repeat}}
+  ],
+  "ProductCategory": [
+    {{#repeat 10}}
+    {
+      "name": "{{commerce:product}}"
+    }
+    {{/repeat}} 
+  ],
+  "Post": [
+    {{#repeat 10}}
+      {
+        "title": "{{lorem:sentence}}",
+        "author": "{{name:firstName}}",
+        "publishedData": "{{data.past}}",
+        "image": "{{image:technics}}",
+        "upvote": {{number 10 1000}},
+        "content": {
+          "brief": "{{lorem:sentence}}",
+          "extended": "{{lorem:paragraphs 1}}"
+        }
+      }
+    {{/repeat}}
+  ],
+  "PostCategory": [
+    {{#repeat 10}}
+    {
+      "name": "{{commerce:product}}"
+    }
+    {{/repeat}} 
   ]
 }
