@@ -1,0 +1,35 @@
+{
+  "user": [
+    {{#repeat 2}}
+    {
+      "_id": "{{random:uuid}}",
+      "name": "{{firstName}}",
+      "email": "{{email}}",
+      "password": "{{random:uuid}}"
+    }
+    {{/repeat}}
+  ],
+  "images": [
+    {{#repeat 3 6}}
+    "img{{index}}.png"
+    {{/repeat}}
+  ],
+  "product": [
+    {
+      "title": "{{title}}",
+      "details": {
+        "price": "{{commerce:price}}",
+        "priceRange": {
+          "max": "{{commerce:price}}",
+          "min": "{{commerce:price}}"
+        },
+        "picUrl": "{{image:business}}",
+        "upvote": {{number 10 1000}}
+      },
+      "content": {
+        "brief": "{{lorem:sentence}}",
+        "article": "{{lorem:paragraphs 1}}"
+      }
+    }
+  ]
+}
