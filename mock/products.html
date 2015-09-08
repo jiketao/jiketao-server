@@ -1,0 +1,38 @@
+{
+	"list": [
+		{{#repeat}}
+		{
+		    "title": "{{title}}",
+		    "details": {
+		        "price": {{commerce:price}},
+		        "priceRange": {
+		          "max": {{commerce:price}},
+		          "min": {{commerce:price}}
+		        },
+		        "pictures": [
+		            {{#repeat 1 10}}
+		            "{{image:technics}}"
+		            {{/repeat}}
+		        ],
+		        "upvote": {{number 10 1000}},
+		        "ext": {
+		            "a" : 1
+		        }
+		    },
+		    "content": {
+		        "brief": "{{lorem:sentence}}"
+		    },
+		    "categories": [
+		        {{#repeat 1 4}}
+		        {
+		            "name": "{{commerce:product}}",
+		            "_id": "{{random:uuid}}"
+		        }
+		        {{/repeat}}
+		    ],
+		    "__test__": true
+		}
+		{{/repeat}}
+	],
+	"totalCount": 1024
+}

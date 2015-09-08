@@ -177,6 +177,16 @@ helpers.title = function() {
 	return titles[index];
 }
 
+helpers.date = function() {
+  var date = new Date();
+
+  date.setMonth((Math.floor(Math.random() * 12 )));
+  date.setDate((Math.floor(Math.random() * 30)));
+  date.setHours((Math.floor(Math.random() * 24)));
+
+  return date.toDateString()
+} 
+
 module.exports = helpers;
 
 

@@ -1,5 +1,5 @@
 {
   "verbose": true,
-  "ignore": ["test/*", "node_modules/*", "templates/*", "public/*", ".git/*"],
+  "ignore": ["test/*", "node_modules/*", "templates/*", "public/*", ".git/*", "mock/*.html"],
   "execMap": {}
 }

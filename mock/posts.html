@@ -1,0 +1,26 @@
+{
+	"list": [
+		{{#repeat 15}}
+		{
+			"title": "{{lorem:sentence}}",
+		    "author": "{{name:firstName}}",
+		    "state": "published",
+		    "publishedData": "{{date}}",
+		    "cover": "{{image:technics}}",
+		    "upvote": {{number 10 1000}},
+		    "content": {
+		      "brief": "{{lorem:sentence}}"
+		    },
+		    "categories": [
+		    	{{#repeat 1 4}}
+		    	{
+		    		"name": "{{commerce:product}}",
+		    		"_id": "{{random:uuid}}"
+			    }
+		    	{{/repeat}}
+		    ]
+		}
+		{{/repeat}}
+	],
+	"totalCount": 1024
+}

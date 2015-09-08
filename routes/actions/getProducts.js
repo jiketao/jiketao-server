@@ -44,19 +44,16 @@
  */
 var keystone = require('keystone');
 var async = require('async');
+var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-	var Model = keystone.list('Products').model;
+	var Model = keystone.list('Product').model;
 
 	res.json({
 		success: true,
-		data: {
-			list: [],
-			totalCount: 100
-		}
+		data: mock('products')
 	});
 
-	
 }

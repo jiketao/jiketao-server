@@ -39,21 +39,15 @@
  */
 var keystone = require('keystone');
 var async = require('async');
+var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
-	var PostCategory = keystone.list('PostCategory').model;
-	PostCategory.getAll(function(err, results) {
-		if (err) {
-			res.json({
-				success: false,
-				err: err
-			});
-			return;
-		}
 
-		res.json({
-			success: true,
-			data: results
-		})
-	});
+  res.json({
+    success: true,
+    data: mock('product')
+  });
+
+  return;
+  
 }

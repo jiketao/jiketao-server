@@ -37,13 +37,12 @@
 
 var keystone = require('keystone');
 var async = require('async');
+var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
 	var Post = keystone.list('Post').model;
   res.json({
     success: true,
-    data: {
-
-    }
+    data: mock('post')
   })
 }
