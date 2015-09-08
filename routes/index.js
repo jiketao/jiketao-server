@@ -36,28 +36,35 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 	
-	// Views
+	// GET Pages
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.get('/shop/item', routes.views.shoppingItem);
+
+	// GET APIS
+	app.get('/skus', routes.actions.getSkus);
+	app.get('/products', routes.actions.getProducts);
+	app.get('/products/search/:keyword', routes.actions.searchProduct);
+	app.get('/products/categories', routes.actions.getProductCategories);
+	app.get('/products/:id', routes.actions.getProduct);
+	app.get('/posts', routes.actions.getPosts);
+	app.get('/posts/search/:keyword', routes.actions.searchPost);
+	app.get('/posts/categories', routes.actions.getPostCategories);
+	app.get('/posts/:id', routes.actions.getPost);
+	
+	// ADMIN 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/products', routes.admin.products);
-
 	app.get( '/admin/product/new', routes.admin.addProduct);
 	app.post('/admin/product/new', routes.actions.addProduct);
 	app.post('/admin/product/edit', routes.actions.updateProduct);
 	app.get( '/admin/product/:id', routes.admin.updateProduct);
+	// app.post('/admin/posts/categories', routes.actions.addPostCategories);
 	// app.get( '/admin/add-post', routes.admin.addPost);
 	// app.post('/admin/add-post', routes.actions.addPost);
 	// app.get( '/admin/posts', routes.admin.posts);
-
-	// apis
-	// app.get('/skus', routes.actions.getSkus);
-	app.post('/postCategories', routes.actions.addPostCategories);
-	app.get('/postCategories', routes.actions.getPostCategories);
 };
