@@ -59,10 +59,10 @@ exports = module.exports = function(app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	app.get('/admin', routes.admin.dashbord);
 	app.get('/admin/products', routes.admin.products);
-	app.get( '/admin/product/new', routes.admin.addProduct);
+	app.get('/admin/product/new', routes.admin.addProduct);
+	app.get('/admin/product/:id', routes.admin.updateProduct);
 	app.post('/admin/product/new', routes.actions.addProduct);
 	app.post('/admin/product/edit', routes.actions.updateProduct);
-	app.get( '/admin/product/:id', routes.admin.updateProduct);
 	// app.post('/admin/posts/categories', routes.actions.addPostCategories);
 	// app.get( '/admin/add-post', routes.admin.addPost);
 	// app.post('/admin/add-post', routes.actions.addPost);
