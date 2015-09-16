@@ -8,7 +8,7 @@
         },
         "pictures": [
             {{#repeat 1 10}}
-            "{{image:technics}}"
+            "{{image:technics}}?random={{random:uuid}}"
             {{/repeat}}
         ],
         "upvote": {{number 10 1000}},
@@ -24,6 +24,14 @@
         {{#repeat 1 4}}
         {
             "name": "{{commerce:product}}",
+            "_id": "{{random:uuid}}"
+        }
+        {{/repeat}}
+    ],
+    "posts": [
+        {{#repeat 1 5}}
+        {
+            "title": "{{title}}",
             "_id": "{{random:uuid}}"
         }
         {{/repeat}}
