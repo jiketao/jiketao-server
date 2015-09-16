@@ -33,7 +33,7 @@ var routes = {
 	admin: importRoutes('./admin')
 };
 
-var CLIENT_VERSION = "0.0.1";
+var CLIENT_VERSION = "0.0.3";
 
 function onClientVersionBump() {
 	// TODO: 客户端发布的时候更新 CLIENT_VERSION 变量
