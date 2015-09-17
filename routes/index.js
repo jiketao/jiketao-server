@@ -73,6 +73,16 @@ exports = module.exports = function(app) {
 	app.get('/admin/product/:id', routes.admin.updateProduct);
 	app.post('/admin/product/new', routes.actions.addProduct);
 	app.post('/admin/product/edit', routes.actions.updateProduct);
+
+	// 调查列表
+	app.get('/admin/surveys', routes.admin.surveys);
+	app.get('/admin/add-survey', routes.admin.addSurvey);
+
+	app.delete('/admin/surveys/:id', routes.actions.deleteSurvey);
+	app.post('/admin/surveys/new', routes.actions.addSurvey);
+
+	app.get('/surveys/:id', routes.actions.getSurvey);
+
 	// app.post('/admin/posts/categories', routes.actions.addPostCategories);
 	// app.get( '/admin/add-post', routes.admin.addPost);
 	// app.post('/admin/add-post', routes.actions.addPost);

@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,6 +85,19 @@
                         </li>
 
                         <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 调查管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/admin/surveys">调查列表</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/add-survey">新增调查</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 文章管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -130,8 +142,8 @@
 
     </div>
     <!-- /#wrapper -->
-    
-    <!-- jQuery -->
+
+<!-- jQuery -->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
