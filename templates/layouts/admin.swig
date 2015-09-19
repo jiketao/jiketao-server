@@ -91,7 +91,7 @@
                                     <a href="/admin/surveys">调查列表</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/add-survey">新增调查</a>
+                                    <a href="http://121.40.250.248:9000/">新增调查</a>
                                 </li>
                             </ul>
                         </li>
