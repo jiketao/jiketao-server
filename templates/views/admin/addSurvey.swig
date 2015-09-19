@@ -1,9 +1,9 @@
 {% extends "../../layouts/admin.swig" %}
 
 {% block content %}
-<form action="/admin/surveys/new" method="POST">
+<form action="/admin/surveys/new" method="POST" enctype="multipart/form-data">
   <div>
-    <label>调查问卷标题：<input name="title" type="text"  enctype="multipart/form-data"> </label>
+    <label>调查问卷标题：<input name="title" type="text"> </label>
   </div>
   <div>
     <label>Excel上传：<input name="result" type="file"> </label>

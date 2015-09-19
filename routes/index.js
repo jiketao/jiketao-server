@@ -21,6 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var surveyServer = require("./survey") ;
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -41,11 +42,8 @@ function onClientVersionBump() {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-	app.use(function(req, res, next) {
-		res.locals.CLIENT_VERSION = CLIENT_VERSION;
-		res.locals.CDN_PATH = "/cdn"
-		next();
-	});
+	surveyServer.init(); // 给调查问卷单独起一个服务器
+
 	// GET Pages
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
