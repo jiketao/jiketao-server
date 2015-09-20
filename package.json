@@ -13,6 +13,7 @@
     "connect-busboy": "0.0.2",
     "dotenv": "^1.1.0",
     "excel": "^0.1.4",
+    "express": "^4.13.3",
     "keystone": "^0.3.11",
     "multer": "^1.0.3",
     "swig": "^1.4.1",
