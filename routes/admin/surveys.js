@@ -16,7 +16,6 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		keystone.list('Survey').model.find({}, {title: 1}, function(err, items) {
 			locals.data.surveys = items;
-			console.log(items);
 			next(err);
 		});
 	});
