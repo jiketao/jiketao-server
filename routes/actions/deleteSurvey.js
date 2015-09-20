@@ -5,7 +5,6 @@ exports = module.exports = function(req, res) {
   var view = new keystone.View(req, res);
 
   if (req.method === "DELETE") {
-    console.log(req.params)
     Model.remove({_id: req.params.id}, function(err, result) {
       if (err) return res.send(500, {result: "fail:", msg: "删除失败"});
       res.send({result: "success", msg: "删除成功"});

@@ -25,6 +25,7 @@ exports.init = function() {
 	});
 
 	app.post("/survey", function(req, res, next) {
+    var origin = req.headers.origin.replace(/:\d+$/, "");
 		req.busboy.on("file", function(filename, file) {
       var saveFile = fs.createWriteStream(savePath);
       saveFile.on("close", function() {
@@ -32,7 +33,7 @@ exports.init = function() {
           if (err) {
             return res.json({msg: err});
           }
-          res.json({"msg": "OK~!"});
+          res.redirect(origin + "/admin/surveys");
         });
       })
       file.pipe(saveFile);
