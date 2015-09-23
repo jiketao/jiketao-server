@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var markdown = require("markdown").markdown
 
 exports = module.exports = function(req, res) {
 
@@ -13,12 +14,11 @@ exports = module.exports = function(req, res) {
 	}
 
 	view.on('init', function(next) {
-		keystone.list('Product').model.find({_id: req.params.id}).exec(function(err, result) {
-			if (err || !result) {
-				return next(err);
-			}
-
+		keystone.list('Product').model.findOne({_id: req.params.id}).exec(function(err, result) {
+			result = result.toJSON();
+			makeUp(result);
 			locals.data.product = result;
+			return next(err);
 		});
 	});
 
@@ -28,5 +28,26 @@ exports = module.exports = function(req, res) {
 	locals.data.product = mock("product");
 
 	view.render('product');
+
+	function makeUp(product) {
+
+		// 图片链接解析
+		product.details.pictures = product.details.picUrl.split("\n");
+
+		// 规格参数解析
+		var exts = product.details.ext.split("\n")
+		var extJSON = {}
+		exts.forEach(function(item) {
+			var kv = item.split("-")
+			extJSON[kv[0]] = kv[1] || "无";
+		})
+		product.details.ext = extJSON
+
+		// 文章列表
+		product.posts = []; // 暂时没有
+
+		// markdown内容
+		product.content.extended = markdown.toHTML(product.content.extended)
+	}
 
 }

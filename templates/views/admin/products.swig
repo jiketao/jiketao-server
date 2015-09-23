@@ -1,6 +1,6 @@
 {% extends "../../layouts/admin.swig" %}
 
-{% block content %} 
+{% block content %}
 <div class="row">
 	<div class="col-lg-12">
         <h1 class="page-header">商品管理</h1>
@@ -11,22 +11,22 @@
 	    		g_config.items =  {{ JSON.stringify(data) }};
 	    	</script>
         {% endif %}
-		
+
 		{% raw %}
 			<div id="ItemList">
 			  <table class="table">
 			  	 <thead>
 					<tr>
 				  	 	<th> 标题 </th>
-						<th> 价格 </th>	
+						<th> 价格 </th>
 						<th> 简介 </th>
 						<th> 分类 </th>
 						<th> 操作 </th>
 					</tr>
 			  	 </thead>
-			  	 <tbody> 
+			  	 <tbody>
 			  	 	<tr v-repeat="items">
-			  	 		<td>{{title}}</td>
+			  	 		<td><a target="_blank" href="/products/{{id}}">{{title}}</a></td>
 			  	 		<td>{{details.price}}</td>
 			  	 		<td>{{content.brief}}</td>
 			  	 		<td></td>
@@ -41,8 +41,12 @@
 </div>
 {% endblock %}
 
-{%- block footer %} 
+{%- block footer %}
 <script>
+
+	g_config.items.items.forEach(function(item) {
+		item.id = item._id;
+	});
 
 	var demo = new Vue({
 		el: '#ItemList',
@@ -54,4 +58,3 @@
 
 </script>
 {% endblock %}
-

@@ -34,6 +34,9 @@ Product.add({
 
 		// 赞
 		upvote: {type: Number},
+
+		// 规格说明
+		ext: {type: String}
 	},
 
 	// 商品描述信息
@@ -46,8 +49,8 @@ Product.add({
 
 	// 商品分类信息
 	categories: {
-		type: Types.Relationship, 
-		ref: 'ProductCategory', 
+		type: Types.Relationship,
+		ref: 'ProductCategory',
 		many: true
 	}
 });
