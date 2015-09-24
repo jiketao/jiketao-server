@@ -19,22 +19,17 @@ Product.add({
 
 	// 商品 sku 信息详情
 	details: {
-
 		// 价格
 		price: {type: String},
-
 		// 价格范围
 		priceRange: {
 			max: {type: String},
 			min: {type: String}
 		},
-
 		// 商品图片
 		picUrl: {type: String},
-
 		// 赞
 		upvote: {type: Number},
-
 		// 规格说明
 		ext: {type: String}
 	},
@@ -43,7 +38,6 @@ Product.add({
 	content: {
 		// 简要描述
 		brief: {type: String},
-
 		extended: {type: String}
 	},
 

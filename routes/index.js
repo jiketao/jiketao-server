@@ -49,7 +49,7 @@ exports = module.exports = function(app) {
 		res.locals.CDN_PATH = "/cdn"
 		next();
 	});
-	
+
 	// GET Pages
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
@@ -67,6 +67,8 @@ exports = module.exports = function(app) {
 	app.get('/posts/search/:keyword', routes.actions.searchPost);
 	app.get('/posts/categories', routes.actions.getPostCategories);
 	app.get('/posts/:id', routes.actions.getPost);
+
+	app.delete('/products/:id', routes.actions.deleteProduct);
 
 	// ADMIN
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

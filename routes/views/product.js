@@ -35,7 +35,8 @@ exports = module.exports = function(req, res) {
 		product.details.pictures = product.details.picUrl.split("\n");
 
 		// 规格参数解析
-		var exts = product.details.ext.split("\n")
+		var ext = product.details.ext || ""
+		var exts = ext.split("\n")
 		var extJSON = {}
 		exts.forEach(function(item) {
 			var kv = item.split("-")

@@ -31,6 +31,7 @@
 			  	 		<td>{{content.brief}}</td>
 			  	 		<td></td>
 			  	 		<td> <a href="/admin/product/{{uid}}" class="btn btn-sm btn-primary">编辑</a></td>
+			  	 		<td> <a href="#" v-on="click: deleteProduct($event, uid, $index)">删除</a></td>
 			  	 	</tr>
 			  	 </tbody>
 			  </table>
@@ -52,7 +53,24 @@
 		el: '#ItemList',
 		data: {
 			title: 'itemList',
-			items: $.extend({}, g_config.items.items, true)
+			items: $.extend([], g_config.items.items, true)
+		},
+		methods: {
+			deleteProduct: function(event, uid, i) {
+				if (!confirm("确定删除？")) return;
+				var self = this;
+				event.preventDefault();
+				$.ajax({
+					url: "/products/" + uid,
+					type: "DELETE",
+					success: function() {
+						self.$data.items.splice(i, 1);
+					},
+					error: function(data) {
+						alert("删除失败！" + data.msg);
+					}
+				})
+			}
 		}
 	});
 

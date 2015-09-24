@@ -22,14 +22,11 @@ var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
 	var PostCategory = keystone.list('PostCategory').model;
-
 	res.json({
 		success: true,
 		data: mock('postCategories')
 	});
-	
 	return;
-
 	PostCategory.getAll(function(err, results) {
 		if (err) {
 			res.json({
@@ -38,7 +35,6 @@ exports = module.exports = function(req, res) {
 			});
 			return;
 		}
-
 		res.json({
 			success: true,
 			data: results

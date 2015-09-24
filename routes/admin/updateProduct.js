@@ -20,14 +20,12 @@ exports = module.exports = function(req, res) {
 
 	// 商品分类编辑
 	view.on('init', function(next) {
-
 		var query = keystone.list('Product').model.findOne({_id: id});
-
 		query.exec(function(err, results) {
 			locals.data.item = results;
 			next(err);
 		});
 	});
-	
+
 	view.render('admin/updateProduct');
 }
