@@ -3,7 +3,13 @@
 {% block content %} 
 <div class="row">
 	<div class="col-lg-12">
-        <h1 class="page-header">添加文章</h1>
+        <h1 class="page-header">编辑文章</h1>
+       {% if data.item %}
+    	<script>
+    		var g_config = window.g_config || {};
+    		g_config.data =  {{ JSON.stringify(data) }};
+    	</script>
+      {% endif %}
 		{% raw %}
 		<div id="PostForm">
 			<p class="form-horizental">
@@ -55,15 +61,7 @@
 <script>
 	var PostForm = new Vue({
 		el: '#PostForm',
-		data: {
-			title: '文章标题',
-			img: '',
-			content: {
-				brief: '',
-				extended: ''
-			},
-			categories: []
-		},
+		data: g_config.data.item,
 		filters: {
 		    marked: marked
 		},
@@ -72,13 +70,18 @@
 				var $d = this.$data;
 				$.ajax({
 					type: 'post',
-					url: '/admin/post/new',
+					url: '/admin/post/edit',
 					data: {
-						title: $d.title,
-						img: $d.img,
-						content: {
-							brief: $d.content.brief,
-							extended: $d.content.extended
+						query: {
+							_id: $d._id
+						},
+						data: {
+							title: $d.title,
+							img: $d.img,
+							content: {
+								brief: $d.content.brief,
+								extended: $d.content.extended
+							}
 						}
 					},
 					success: function(data) {

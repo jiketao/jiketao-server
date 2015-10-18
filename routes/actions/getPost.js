@@ -40,9 +40,23 @@ var async = require('async');
 var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
-	var Post = keystone.list('Post').model;
-  res.json({
-    success: true,
-    data: mock('post')
-  })
+  var id = req.params.id;
+  
+	var query = keystone.list('Post').model.findOne({
+    _id: id
+  });
+
+  query.exec(function(err, result) {
+    if (err) {
+      return res.json({
+        success: false,
+        err: err
+      });
+    }
+    
+    res.json({
+      success: true,
+      data: result
+    });
+  });
 }

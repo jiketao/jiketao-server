@@ -104,7 +104,7 @@
                                     <a href="/admin/posts">文章列表</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/add-post">新增文章</a>
+                                    <a href="/admin/post/new">新增文章</a>
                                 </li>
                             </ul>
                         </li>

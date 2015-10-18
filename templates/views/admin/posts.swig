@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
 	<div class="col-lg-12">
-        <h1 class="page-header">商品管理</h1>
+        <h1 class="page-header">文章管理</h1>
 
         {% if data.items %}
 	    	<script>
@@ -17,6 +17,7 @@
 			  <table class="table">
 			  	 <thead>
 					<tr>
+						<th> ID </th>
 				  	 	<th> 标题 </th>
 						<th> 作者 </th>
 						<th> 简介 </th>
@@ -25,11 +26,12 @@
 			  	 </thead>
 			  	 <tbody>
 			  	 	<tr v-repeat="items">
+			  	 		<td>{{uid}}</td>
 			  	 		<td>{{title}}</td>
 			  	 		<td>admin</td>
 			  	 		<td>{{content.brief}}</td>
-			  	 		<td> <a w-on="click: deletePost(uuid)" class="btn btn-sm btn-primary">编辑</a></td>
-			  	 		<td> <a href="/admin/update-post/{{uid}}" class="btn btn-sm btn-primary">删除</a></td>
+			  	 		<td> <a href="/admin/post/{{uid}}" class="btn btn-sm btn-primary">编辑</a></td>
+			  	 		<td> <a w-on="click: deletePost(uuid)" class="btn btn-sm btn-primary">删除</a></td>
 			  	 	</tr>
 			  	 </tbody>
 			  </table>

@@ -17,6 +17,7 @@
 			  <table class="table">
 			  	 <thead>
 					<tr>
+						<th>ID</th>
 				  	 	<th> 标题 </th>
 						<th> 价格 </th>
 						<th> 简介 </th>
@@ -26,6 +27,7 @@
 			  	 </thead>
 			  	 <tbody>
 			  	 	<tr v-repeat="items">
+			  	 		<td>{{uid}}</td>
 			  	 		<td><a target="_blank" href="/products/{{id}}">{{title}}</a></td>
 			  	 		<td>{{details.price}}</td>
 			  	 		<td>{{content.brief}}</td>

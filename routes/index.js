@@ -56,6 +56,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.get('/products/:id', routes.views.product);
+	app.get('/posts/:id', routes.views.post);
 
 	// GET APIS
 	app.get('/skus', routes.actions.getSkus);
@@ -89,7 +90,9 @@ exports = module.exports = function(app) {
 	app.get('/surveys/:id', routes.actions.getSurvey);
 
 	// app.post('/admin/posts/categories', routes.actions.addPostCategories);
-	// app.get( '/admin/add-post', routes.admin.addPost);
-	// app.post('/admin/add-post', routes.actions.addPost);
-	// app.get( '/admin/posts', routes.admin.posts);
+	app.get( '/admin/post/new', routes.admin.addPost);
+	app.post('/admin/post/new', routes.actions.addPost);
+	app.post('/admin/post/edit', routes.actions.updatePost);
+	app.get('/admin/post/:id', routes.admin.updatePost);
+	app.get( '/admin/posts', routes.admin.posts);
 };
