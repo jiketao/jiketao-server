@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var markdown = require("markdown").markdown
 
 exports = module.exports = function(req, res) {
 	
@@ -13,12 +14,15 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		
 		var q = keystone.list('Post').model.findOne({
-			id: req.params.id
+			_id: req.params.id
 		});
 		// }).populate('author categories');
 		
 		q.exec(function(err, result) {
-			locals.data.post = result;
+			if (result) {
+				result.content.extended = markdown.toHTML(result.content.extended)
+			}
+			locals.data = {post: result};
 			next(err);
 		});
 		
