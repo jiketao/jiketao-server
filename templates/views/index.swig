@@ -1,4 +1,4 @@
-{% extends "../layouts/default.swig" %}
+{% extends "../layouts/base.swig" %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{{CDN_PATH}}/{{CLIENT_VERSION}}/styles/home.css">
