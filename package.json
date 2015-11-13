@@ -14,9 +14,11 @@
     "dotenv": "^1.1.0",
     "excel": "^0.1.4",
     "express": "^4.13.3",
+    "express-log": "^1.0.1",
     "keystone": "^0.3.11",
     "markdown": "^0.5.0",
     "multer": "^1.0.3",
+    "rebas-logger": "^0.1.0",
     "swig": "^1.4.1",
     "underscore": "^1.8.0",
     "uuid": "^2.0.1"

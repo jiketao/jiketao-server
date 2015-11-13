@@ -4,6 +4,13 @@ require('dotenv').load();
 
 // Require keystone
 var keystone = require('keystone');
+var express = require('express');
+var logger = require('rebas-logger');
+var app = express();
+
+logger.setConfig('./config.json');
+app.use(logger.expressLogger());
+
 var swig = require('swig');
 
 // Disable swig's bulit-in template caching, express handles it
@@ -12,7 +19,7 @@ swig.setDefaults({ cache: false });
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
-
+keystone.set('app', app);
 keystone.init({
 
 	'name': 'jiketao',

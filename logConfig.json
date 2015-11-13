@@ -1,0 +1,30 @@
+{
+    "appenders": [  
+        {
+            "type": "dateFile",  
+            "filename": "logA",  
+            "pattern": "-yyyy-MM-dd hh.log",  
+            "alwaysIncludePattern": true,  
+            "category": "express"  
+        }, {
+            "type": "console", 
+            "layout": {
+                "type": "pattern",
+                "pattern": "[%d] [%p] %c - %m"  
+            }
+        }, {
+            "type": "file",
+            "absolute": true,  
+            "filename": "/root/jiketao/jiketao-server/request.log",
+            "maxLogSize": 20480,  
+            "category": "absolute-logger"
+        }
+    ],
+    "levels": {  
+        "[all]": "TRACE",
+        "express": "ERROR",
+        "app": "TRACE"
+    },
+    "replaceConsole": true,  
+    "cwd": "./logs"
+}
