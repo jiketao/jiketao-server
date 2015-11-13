@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#uthor: "FRITZ Thomas" <fritztho@gmail.com> (http://www.fritzthomas.com)
+# author: "FRITZ Thomas" <fritztho@gmail.com> (http://www.fritzthomas.com)
 # GitHub: https://gist.github.com/thomasfr/9691385
 #
 # The MIT License (MIT)
@@ -87,8 +87,8 @@ do
     echo `pwd`
     git checkout -f "${DEPLOY_BRANCH}" || exit 1
     git reset --hard "$DEPLOY_NEWREV" || exit 1
-
     cd ${DEPLOY_ROOT};echo `pwd`
+    pm2 restart keystone
     if [ ! -z "${POST_UPDATE_CMD}" ]; then
        echo
        echo "githook: POST UPDATE (CMD: '${POST_UPDATE_CMD}'):"
