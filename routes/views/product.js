@@ -48,7 +48,7 @@ exports = module.exports = function(req, res) {
 		product.posts = []; // 暂时没有
 
 		// markdown内容
-		product.content.extended = markdown.toHTML(product.content.extended)
+		product.content.extended = product.content.extended || ''
 	}
 
 }
