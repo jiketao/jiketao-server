@@ -1,6 +1,9 @@
 var keystone = require('keystone');
 var async = require('async');
-var markdown = require("markdown").markdown
+var markdown = require("markdown").markdown;
+
+var log = require('rebas-logger');
+var logger = log.getLogger();
 
 exports = module.exports = function(req, res) {
 
@@ -46,9 +49,12 @@ exports = module.exports = function(req, res) {
 
 		// 文章列表
 		product.posts = []; // 暂时没有
-
-		// markdown内容
-		product.content.extended = product.content.extended || ''
+		try {
+			// markdown内容
+			product.content = product.content || {};
+			product.content.extended = product.content.extended || ''
+		} catch (e) {
+			logger.info(e);
+		}
 	}
-
 }

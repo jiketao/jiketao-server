@@ -5,13 +5,16 @@ require('dotenv').load();
 // Require keystone
 var keystone = require('keystone');
 var express = require('express');
-var logger = require('rebas-logger');
+var log = require('rebas-logger');
+var logger = log.getLogger();
 var app = express();
 
-logger.setConfig('./config.json');
-app.use(logger.expressLogger());
+log.setConfig('./config.json');
+app.use(log.expressLogger());
 
 var swig = require('swig');
+
+logger.info('start');
 
 // Disable swig's bulit-in template caching, express handles it
 swig.setDefaults({ cache: false });
