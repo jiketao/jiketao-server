@@ -80,6 +80,7 @@ exports = module.exports = function(app) {
 	app.get('/admin/product/:id', routes.admin.updateProduct);
 	app.post('/admin/product/new', routes.actions.addProduct);
 	app.post('/admin/product/edit', routes.actions.updateProduct);
+	app.post('/admin/productCategories/new', routes.actions.addProductCategories);
 
 	// 调查列表
 	app.get('/admin/surveys', routes.admin.surveys);
