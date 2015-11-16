@@ -26,10 +26,6 @@ exports = module.exports = function(req, res) {
 	});
 
 
-	// API完成以后要把下面两行去掉
-	var mock = require('../../mock');
-	locals.data.product = mock("product");
-
 	view.render('product');
 
 	function makeUp(product) {

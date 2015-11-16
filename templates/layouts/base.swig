@@ -13,5 +13,16 @@
     {%- block content %}{% endblock %}
   </div>
 </body>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1c4e3442cc1a1a3dd3775caff1050f09";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 {%- block scripts %}{% endblock %}
 </html>
