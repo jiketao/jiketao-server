@@ -18,16 +18,29 @@
  */
 var keystone = require('keystone');
 var async = require('async');
-var mock = require('../../mock');
 
 exports = module.exports = function(req, res) {
-  var view = new keystone.View(req, res);
-  var locals = res.locals;
-  var Model = keystone.list('Product').model;
 
-  res.json({
-    success: true,
-    data: mock('products')
-  });
-  
+    var page = req.query.pageNum || 1;
+    var pageCount = req.query.pageCount || 10;
+    var querys = req.params.keyword;
+    querys = querys.split('-');
+    console.log(querys, req.query);
+    querys = querys.map(function(it) {
+        return new RegExp(it, 'gi');
+    })
+    keystone.list('Product').model
+    .find({
+        title: {
+            $in: querys
+        }
+    })
+    .skip((page - 1) * pageCount)
+    .limit(pageCount)
+    .exec(function(err, results) {
+        res.json({
+            success: true,
+            data: results
+        });
+    });
 }
