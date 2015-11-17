@@ -50,6 +50,17 @@ exports = module.exports = function(app) {
 		next();
 	});
 
+	// GET APIS
+	app.get('/api/skus', routes.actions.getSkus);
+	app.get('/api/products/search/:keyword', routes.actions.searchProduct);
+	app.get('/api/products/categories', routes.actions.getProductCategories);
+	app.get('/api/products', routes.actions.getProducts);
+	app.get('/api/products/:id/json', routes.actions.getProduct);
+	app.get('/api/posts', routes.actions.getPosts);
+	app.get('/api/posts/search/:keyword', routes.actions.searchPost);
+	app.get('/api/posts/categories', routes.actions.getPostCategories);
+	app.get('/api/posts/:id', routes.actions.getPost);
+
 	// GET Pages
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
@@ -58,16 +69,6 @@ exports = module.exports = function(app) {
 	app.get('/products/:id', routes.views.product);
 	app.get('/posts/:id', routes.views.post);
 
-	// GET APIS
-	app.get('/skus', routes.actions.getSkus);
-	app.get('/products/search/:keyword', routes.actions.searchProduct);
-	app.get('/products/categories', routes.actions.getProductCategories);
-	app.get('/products', routes.actions.getProducts);
-	app.get('/products/:id/json', routes.actions.getProduct);
-	app.get('/posts', routes.actions.getPosts);
-	app.get('/posts/search/:keyword', routes.actions.searchPost);
-	app.get('/posts/categories', routes.actions.getPostCategories);
-	app.get('/posts/:id', routes.actions.getPost);
 
 	app.delete('/products/:id', routes.actions.deleteProduct);
 

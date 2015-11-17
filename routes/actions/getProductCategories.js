@@ -18,15 +18,18 @@
  */
 var keystone = require('keystone');
 var async = require('async');
-var mock = require('../../mock');
 exports = module.exports = function(req, res) {
-  var view = new keystone.View(req, res);
-  var locals = res.locals;
-  var Model = keystone.list('Product').model;
-
-  res.json({
-    success: true,
-    data: mock('postCategories')
-  });
-  
+    var locals = res.locals;
+    keystone.list('ProductCategory').model.find().exec(function(err, results) {
+        if (err) {
+            return res.json({
+                success: false,
+                err: err
+            });
+        }
+        res.json({
+            success: true,
+            data: results
+        });
+    })
 }
